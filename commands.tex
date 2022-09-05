@@ -203,7 +203,7 @@
 \newcommand{\Pres}{\mathrm{Pres}} %presentable categories
 \newcommand{\Noohi}{\mathrm{Noohi}} %category of Noohi groups
 \newcommand{\Inf}{\mathrm{Inf}}
-\newcommand{\LPar}{\mathrm{L}\-\mathrm{Par}} %Langlands parameters
+\newcommand{\LPar}{\mathrm{LPar}} %Langlands parameters
 
 \newcommand{\Aut}{\mathrm{Aut}}
 \newcommand{\Inn}{\mathrm{Inn}}
@@ -244,6 +244,12 @@
 %\newcommand{\tensor}{\otimes}
 \NewDocumentCommand{\tensor}{e{_^}}{%
   \mathbin{\mathop{\otimes}\displaylimits
+    \IfValueT{#1}{_{#1}}
+    \IfValueT{#2}{^{#2}}
+  }%
+}
+\NewDocumentCommand{\semidirect}{e{_^}}{%
+  \mathbin{\mathop{\rtimes}\displaylimits
     \IfValueT{#1}{_{#1}}
     \IfValueT{#2}{^{#2}}
   }%
